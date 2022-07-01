@@ -22,6 +22,7 @@ class AppsViewController: UIViewController {
     collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.reuseIdentifier)
     collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
     collectionView.register(MediumTableCell.self, forCellWithReuseIdentifier: MediumTableCell.reuseIdentifier)
+    collectionView.register(SmallTableCell.self, forCellWithReuseIdentifier: SmallTableCell.reuseIdentifier)
     createDataSource()
     reloadData()
   }
@@ -35,6 +36,7 @@ class AppsViewController: UIViewController {
   func createDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, App>(collectionView: collectionView) { collectionView, indexPath, app in
       switch self.sections[indexPath.section].type {
+      case "smallTable": return self.configure(SmallTableCell.self, wiht: app, for: indexPath)
       case "mediumTable": return self.configure(MediumTableCell.self, wiht: app, for: indexPath)
       default: return self.configure(FeaturedCell.self, wiht: app, for: indexPath)
       }
@@ -64,6 +66,7 @@ class AppsViewController: UIViewController {
     let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
       let section = self.sections[sectionIndex]
       switch section.type {
+      case "smallTable": return self.createSmallTableSection(using: section)
       case "mediumTable": return self.createMediumTableSection(using: section)
       default: return self.createFeaturedSection(using: section)
       }
@@ -95,9 +98,26 @@ class AppsViewController: UIViewController {
     let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItem])
     let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
     layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
-    let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
-    let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+    let layoutSectionHeader = createSectionHeader()
     layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
     return layoutSection
+  }
+  
+  func createSmallTableSection(using section: Section) -> NSCollectionLayoutSection {
+    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.2))
+    let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+    let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(200))
+    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItem])
+    let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+    let layoutSectionHeader = createSectionHeader()
+    layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+    return layoutSection
+  }
+  
+  func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+    let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+    let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+    return layoutSectionHeader
   }
 }
