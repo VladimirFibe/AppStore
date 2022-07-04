@@ -17,9 +17,8 @@ class ViewController: UITabBarController {
   func setupViews() {
     let games = UINavigationController(rootViewController: GamesViewController())
     let app = UINavigationController(rootViewController: AppsViewController())
-    let arcade = ArcadeViewController()
+    let arcade = UINavigationController(rootViewController: FoodController())
     let search = SearchViewController()
-    
     setViewControllers([games, app, arcade, search], animated: false)
     guard let items = tabBar.items else { return }
     items[0].image = UIImage(systemName: "gamecontroller")
@@ -31,6 +30,5 @@ class ViewController: UITabBarController {
     items[2].title = "Arcade"
     items[3].title = "Search"
   }
-
 }
 

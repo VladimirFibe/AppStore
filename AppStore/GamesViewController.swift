@@ -53,16 +53,18 @@ class GamesViewController: UIViewController {
   }
   
   func createMessage(using message: Message) -> NSCollectionLayoutSection {
-    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(30))
+    let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(90), heightDimension: .estimated(30))
     let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
-    let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItem])
+    layoutItem.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(5), top: .fixed(5), trailing: .fixed(5), bottom: .fixed(5))
+    let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(60))
+    let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
     let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
     let layoutSectionHeader = createMessageHeader()
     layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+    
     return layoutSection
   }
+  
   func createCompositionalLayout() -> UICollectionViewLayout {
     let layout = UICollectionViewCompositionalLayout { messageIndex, layoutEnvironment in
       let message = self.messages[messageIndex]
@@ -74,7 +76,7 @@ class GamesViewController: UIViewController {
     return layout
   }
   func createMessageHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
-    let layoutMessageHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .fractionalHeight(1))
+    let layoutMessageHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(10))
     let layoutMessageHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutMessageHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     return layoutMessageHeader
   }

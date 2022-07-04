@@ -15,7 +15,7 @@ class MessageHeaderView: UICollectionReusableView {
     let separator = UIView(frame: .zero)
     separator.translatesAutoresizingMaskIntoConstraints = false
     separator.backgroundColor = .quaternaryLabel
-    
+    content.numberOfLines = 0
     
     
     let stackView = UIStackView(arrangedSubviews: [separator, content])
