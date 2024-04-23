@@ -1,34 +1,21 @@
-//
-//  ViewController.swift
-//  AppStore
-//
-//  Created by Vladimir Fibe on 01.07.2022.
-//
-
 import UIKit
 
 class ViewController: UITabBarController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setupViews()
-  }
-
-  func setupViews() {
-    let games = UINavigationController(rootViewController: GamesViewController())
-    let app = UINavigationController(rootViewController: AppsViewController())
-    let arcade = UINavigationController(rootViewController: FoodController())
-    let search = SearchViewController()
-    setViewControllers([games, app, arcade, search], animated: false)
-    guard let items = tabBar.items else { return }
-    items[0].image = UIImage(systemName: "gamecontroller")
-    items[1].image = UIImage(systemName: "square.stack.3d.up.fill")
-    items[2].image = UIImage(systemName: "dollarsign.circle")
-    items[3].image = UIImage(systemName: "magnifyingglass")
-    items[0].title = "Games"
-    items[1].title = "App"
-    items[2].title = "Arcade"
-    items[3].title = "Search"
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+    
+    func setupViews() {
+        let app = UINavigationController(rootViewController: AppsViewController())
+        let games = UINavigationController(rootViewController: GamesViewController())
+        let arcade = UINavigationController(rootViewController: FoodController())
+        let search = SearchViewController()
+        app.tabBarItem = UITabBarItem(title: "App", image: UIImage(systemName: "square.stack.3d.up.fill"), tag: 0)
+        games.tabBarItem = UITabBarItem(title: "Games", image: UIImage(systemName: "gamecontroller"), tag: 1)
+        arcade.tabBarItem = UITabBarItem(title: "Arcade", image: UIImage(systemName: "dollarsign.circle"), tag: 2)
+        search.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 3)
+        setViewControllers([app, games, arcade, search], animated: false)
+    }
 }
 

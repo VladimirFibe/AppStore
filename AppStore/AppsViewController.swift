@@ -1,10 +1,3 @@
-//
-//  AppsViewController.swift
-//  AppStore
-//
-//  Created by Vladimir Fibe on 01.07.2022.
-//
-
 import UIKit
 
 class AppsViewController: UIViewController {
