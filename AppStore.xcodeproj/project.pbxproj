@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9076A91286EDB2500B3CA12 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9076A90286EDB2500B3CA12 /* AppsViewController.swift */; };
+		E89350252BD8142100BB1077 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89350242BD8142100BB1077 /* AppsViewController.swift */; };
+		E9076A91286EDB2500B3CA12 /* TapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9076A90286EDB2500B3CA12 /* TapsViewController.swift */; };
 		E9076A93286EDD7B00B3CA12 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9076A92286EDD7B00B3CA12 /* GamesViewController.swift */; };
 		E9076A95286EDD8200B3CA12 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9076A94286EDD8200B3CA12 /* SearchViewController.swift */; };
 		E9076A97286EDDBE00B3CA12 /* ArcadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9076A96286EDDBE00B3CA12 /* ArcadeViewController.swift */; };
@@ -30,7 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E9076A90286EDB2500B3CA12 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
+		E89350242BD8142100BB1077 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
+		E89350262BD814EE00BB1077 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E9076A90286EDB2500B3CA12 /* TapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapsViewController.swift; sourceTree = "<group>"; };
 		E9076A92286EDD7B00B3CA12 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		E9076A94286EDD8200B3CA12 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E9076A96286EDDBE00B3CA12 /* ArcadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		E9F72464286ED3A1000EDCBA = {
 			isa = PBXGroup;
 			children = (
+				E89350262BD814EE00BB1077 /* README.md */,
 				E9F7246F286ED3A1000EDCBA /* AppStore */,
 				E9F7246E286ED3A1000EDCBA /* Products */,
 			);
@@ -97,7 +101,8 @@
 				E9F72470286ED3A1000EDCBA /* AppDelegate.swift */,
 				E9F72472286ED3A1000EDCBA /* SceneDelegate.swift */,
 				E9F72474286ED3A1000EDCBA /* ViewController.swift */,
-				E9076A90286EDB2500B3CA12 /* AppsViewController.swift */,
+				E89350242BD8142100BB1077 /* AppsViewController.swift */,
+				E9076A90286EDB2500B3CA12 /* TapsViewController.swift */,
 				E9076A92286EDD7B00B3CA12 /* GamesViewController.swift */,
 				E9076A94286EDD8200B3CA12 /* SearchViewController.swift */,
 				E9076A96286EDDBE00B3CA12 /* ArcadeViewController.swift */,
@@ -145,7 +150,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					E9F7246C286ED3A1000EDCBA = {
 						CreatedOnToolsVersion = 14.0;
@@ -196,12 +201,13 @@
 				E9F72475286ED3A1000EDCBA /* ViewController.swift in Sources */,
 				E9F72471286ED3A1000EDCBA /* AppDelegate.swift in Sources */,
 				E9B91FB8286F1AFB00A5F854 /* SmallTableCell.swift in Sources */,
-				E9076A91286EDB2500B3CA12 /* AppsViewController.swift in Sources */,
+				E9076A91286EDB2500B3CA12 /* TapsViewController.swift in Sources */,
 				E9B3724128714F1200193AF2 /* MessageHeaderView.swift in Sources */,
 				E9F72473286ED3A1000EDCBA /* SceneDelegate.swift in Sources */,
 				E9076AA3286EE96000B3CA12 /* FeaturedCell.swift in Sources */,
 				E9076AA1286EE50E00B3CA12 /* SelfConfiguringCell.swift in Sources */,
 				E9B91FB4286F012A00A5F854 /* MediumTableCell.swift in Sources */,
+				E89350252BD8142100BB1077 /* AppsViewController.swift in Sources */,
 				E94147E32870B08800769069 /* Message.swift in Sources */,
 				E9076A93286EDD7B00B3CA12 /* GamesViewController.swift in Sources */,
 				E9076A97286EDDBE00B3CA12 /* ArcadeViewController.swift in Sources */,
@@ -226,6 +232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -258,6 +265,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -272,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -286,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -318,6 +327,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -326,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -346,16 +356,17 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppStore/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -374,16 +385,17 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppStore/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.AppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
